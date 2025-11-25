@@ -26,7 +26,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",  # Local development
-        "https://*.vercel.app",  # Vercel deployments
+        "https://smart-goal-breaker.vercel.app",  # Production frontend
+        "https://smart-goal-breaker-*.vercel.app",  # Preview deployments
     ],
     allow_credentials=True,
     allow_methods=["*"],
