@@ -1,0 +1,17 @@
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: smart-goal-breaker-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=smart_goal_breaker
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
